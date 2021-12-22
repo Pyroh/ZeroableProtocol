@@ -34,6 +34,9 @@ import CoreGraphics
 #endif
 
 public protocol Zeroable { static var zero: Self { get } }
+public extension Zeroable where Self: Equatable {
+    @inlinable var isZero: Bool { self == .zero }
+}
 
 // MARK: - Stdlib Related
 extension Double: Zeroable { }
