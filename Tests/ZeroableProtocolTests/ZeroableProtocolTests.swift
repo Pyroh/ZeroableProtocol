@@ -8,5 +8,10 @@ final class ZeroableProtocolTests: XCTestCase {
         
         XCTAssertFalse(d1.isZero)
         XCTAssertTrue(d2.isZero)
+        
+        let r = Range<Int>.zero
+        XCTAssert(r.lowerBound == .zero && r.upperBound == .zero)
+        let cr = ClosedRange<Int>.zero
+        XCTAssert(cr.lowerBound == .zero && cr.upperBound == .zero)
     }
 }

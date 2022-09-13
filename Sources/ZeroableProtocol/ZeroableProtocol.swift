@@ -51,6 +51,16 @@ extension UInt64: Zeroable { }
 extension UInt32: Zeroable { }
 extension UInt16: Zeroable { }
 extension UInt8: Zeroable { }
+extension ClosedRange: Zeroable where Bound: Zeroable {
+    @inlinable public static var zero: ClosedRange<Bound> {
+        .init(uncheckedBounds: (.zero, .zero))
+    }
+}
+extension Range: Zeroable where Bound: Zeroable {
+    @inlinable public static var zero: Range<Bound> {
+        .init(uncheckedBounds: (.zero, .zero))
+    }
+}
 
 // MARK: - Core Graphics Related
 extension CGFloat: Zeroable { }
