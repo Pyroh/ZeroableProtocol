@@ -13,7 +13,7 @@ let package = Package(
             targets: ["ZeroableProtocol"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Pyroh/LinuxShims.git", branch: "main")
+        .package(url: "https://github.com/Pyroh/LinuxShims.git", .upToNextMajor(from: "0.0.1"))
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
