@@ -28,9 +28,8 @@
 
 
 import Foundation
-import SwiftUI
-#if !os(macOS)
-import CoreGraphics
+#if canImport(LinuxShims)
+import LinuxShims
 #endif
 
 public protocol Zeroable { static var zero: Self { get } }
@@ -88,7 +87,7 @@ extension NSDirectionalEdgeInsets: Zeroable { }
 
 // MARK: - SwiftUI Related
 #if canImport(SwiftUI)
-
+import SwiftUI
 extension Angle: Zeroable { }
 extension AnimatablePair: Zeroable { }
 extension EmptyAnimatableData: Zeroable { }
